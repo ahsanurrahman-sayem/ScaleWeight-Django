@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weight Entry Form</title>
+	<style>
+		body { font-family: Arial; padding: 30px; background: #f0f0f0; }
+		form { background: white; padding: 20px; border-radius: 8px; width: 400px; margin: auto; }
+		label { font-weight: bold; display: block; margin-top: 10px; }
+		input { width: 100%; padding: 8px; margin-top: 4px; }
+		button { margin-top: 15px; padding: 10px 20px; background: #0056b3; color: white; border: none; border-radius: 4px; }
+	</style>
+</head>
+<body>
+	<h2 style="text-align:center;">Weight Entry Form</h2>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Submit & Download PDF</button>
+	</form>
+</body>
+</html>

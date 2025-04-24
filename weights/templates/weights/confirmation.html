@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Confirmation</title>
+</head>
+<body>
+    <h1>Submitted Data</h1>
+    <ul>
+        {% for key, value in data.items %}
+            <li><strong>{{ key }}:</strong> {{ value }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

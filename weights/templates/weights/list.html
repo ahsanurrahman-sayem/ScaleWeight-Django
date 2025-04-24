@@ -1,0 +1,41 @@
+{% extends 'weights/base.html' %}
+
+{% block title %}All Entries{% endblock %}
+
+{% block content %}
+	<div class="d-flex justify-content-between align-items-center mb-4">
+		<h2>All Weight Entries</h2>
+		<form action="{% url 'weight_entry' %}" method="get">
+			<button type="submit" class="btn btn-success">Add New Entry</button>
+		</form>
+	</div>
+
+	<table class="table table-bordered table-striped table-hover">
+		<thead class="table-dark">
+			<tr>
+				<th>ID</th>
+				<th>Vehicle No</th>
+				<th>Client</th>
+				<th>Item</th>
+				<th>Load</th>
+				<th>Unload</th>
+				<th>Net</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for entry in entries %}
+			<tr>
+				<td>{{ entry.id }}</td>
+				<td>{{ entry.vehicle_no }}</td>
+				<td>{{ entry.client_name }}</td>
+				<td>{{ entry.item_name }}</td>
+				<td>{{ entry.load_weight }}</td>
+				<td>{{ entry.unload_weight }}</td>
+				<td>{{ entry.net_weight }}</td>
+				<td>{{ entry.print_date }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
